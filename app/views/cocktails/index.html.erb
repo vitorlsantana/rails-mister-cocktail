@@ -1,22 +1,26 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.unsplash.com/photo-1502819126416-d387f86d47a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=889&q=80')";>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1502819126416-d387f86d47a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=889&q=80')">
   <div class="banner-content">
-    <h1>Cocktails</h1>
-    <p>Bebidas para todas as idades e gostos</p>
-    <%= link_to "Adicione uma nova bebida", new_cocktail_path, class: "btn btn-success btn-sm m-2" %>
+    <h1>Drinks do Cerrado</h1>
+    <p>Enfrente o clima de deserto com muita alegria</p>
+    <%= link_to "Adicione uma nova bebida", new_cocktail_path, class: "btn btn-info btn-sm m-2" %>
   </div>
 </div>
-
-<div class="container">
-  <div class="row mt-5">
-    <% @cocktails.each do |cocktail| %>
-      <div class="col-12 col-md-6 col-lg-3">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @cocktail.photo.key, height: 300, width: 400, crop: :fill %>')">
-          <div class="card-description">
-            <h2><%= cocktail.name %></h2>
-          </div>
-          <%= link_to "", cocktail_path(cocktail), class: 'card-link' %>
-        </div>
+<div class="container bg-dark text-white">
+  <% @cocktails.each do |cocktail| %>
+  <div class="cards">
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo.key, height: 300, width: 400, crop: :fill %>')">
+      <div class="card-description">
+        <h2><%= cocktail.name %></h2>
       </div>
-    <% end %>
+      <%= link_to "", cocktail_path(cocktail), class: 'card-link' %>
+    </div>
+  </div>
+  <% end %>
+</div>
+<div class="footer bg-dark text-white">
+  <div class="footer-links">
+    <a href="https://github.com/vitorlsantana"><i class="fab fa-github"></i></a>
+    <a href="https://www.instagram.com/vitorlsantana/"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com/vitor.santana.52"><i class="fab fa-facebook"></i></a>
   </div>
 </div>
