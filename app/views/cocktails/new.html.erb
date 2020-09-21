@@ -6,6 +6,7 @@
       <%= simple_form_for @cocktail do |f| %>
         <%= f.input :name %>
         <%= f.button :submit, class: 'btn btn-success btn-sm', value: 'Criar cocktail' %>
+        <%= f.input :photo, as: :file %>
       <% end %>
       <%= link_to "Voltar para todos as bebidas", root_path, class: 'btn btn-success btn-sm mt-2' %>
     </div>
