@@ -14,7 +14,7 @@
       <h1>Criar uma nova bebida</h1>
 
       <%= simple_form_for @cocktail do |f| %>
-        <%= f.input :name %>
+        <%= f.input :name, label: 'Nome' %>
         <%= f.button :submit, class: 'btn btn-info btn-sm', value: 'Criar drink' %>
         <%= f.input :photo, as: :file, label: 'Inserir foto', class: 'btn btn-info' %>
       <% end %>

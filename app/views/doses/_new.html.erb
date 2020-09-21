@@ -1,8 +1,8 @@
 <div class="new-dose">
   <h3>Adicione uma nova dose</h3>
   <%= simple_form_for [cocktail, dose] do |f| %>
-    <%= f.association :ingredient, input_html: { class: "beautiful-dropdown" }, include_hidden: false %>
-    <%= f.input :description %>
-    <%= f.button :submit, class: "btn btn-success btn-md" %>
+    <%= f.association :ingredient, input_html: { class: "beautiful-dropdown" }, include_hidden: false, label: 'Ingrediente' %>
+    <%= f.input :description, label: 'Descrição' %>
+    <%= f.button :submit, class: "btn btn-success btn-md", value: 'Incluir dose' %>
   <% end %>
 </div>
