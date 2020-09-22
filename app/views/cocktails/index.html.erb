@@ -7,16 +7,16 @@
 </div>
 <div class="container bg-dark text-white">
   <div class="cards">
-    <% @cocktails.each do |cocktail| %>
-    <% if cocktail.photo.key %>
+  <% @cocktails.each do |cocktail| %>
+  <% if cocktail.photo.attached? %>
     <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo.key, height: 300, width: 400, crop: :fill %>')">
       <div class="card-description">
         <h2><%= cocktail.name %></h2>
       </div>
       <%= link_to "", cocktail_path(cocktail), class: 'card-link' %>
-      <% end %>
-      <% end %>
     </div>
+    <% end %>
+    <% end %>
   </div>
 </div>
 <div class="footer bg-dark text-white">
