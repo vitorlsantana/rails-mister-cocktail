@@ -9,6 +9,8 @@
       <div class="text-center">
         <% if @cocktail.photo.key %>
         <%= cl_image_tag @cocktail.photo.key, height: 200, width: 350, crop: :fill %>
+        <% else %>
+        <% "" %>
         <% end %>
       </div>
       <div class="recipe">
